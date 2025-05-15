@@ -214,3 +214,19 @@ In some cases, the host might have a **firewall** which prevents us from downloa
 *base64 encode the file into **base64** fromat*
 
 Then paste the string on the remote server and decode it.
+
+to check the type of file to be sure if it has been transferred correctly we can:
+
+```bash
+user@remotehost$ file shell
+shell: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, no section header
+```
+and to check if the file was not corrupted we can run a **md5sum** on both files from the remote and main machine:
+
+```bash
+Yagan@htb[/htb]$ md5sum shell
+
+321de1d7e7c3735838890a72c9ae7d1d shell
+```
+
+### THIS MARKS THE END OF THE INTRODUCTION
