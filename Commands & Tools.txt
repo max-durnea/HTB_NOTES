@@ -1,0 +1,118 @@
+#Socat - a tool like netcat with more functionality like port forwarding and connecting to
+		 serial devices
+
+#Common ports - https://web.archive.org/web/20240315102711/https://packetlife.net/media/library/23/common-ports.pdf
+
+#Tmux Cheatsheet - https://tmuxcheatsheet.com/
+
+#Vim - hit "i" for "insert mode"
+	   hit "esc" for "leave insert mode"
+	   "x" : "cut character"
+	   "dw" : "cut word"
+	   "dd" : "cut full line"
+	   "yw" : "copy word"
+	   "yy" : "copy full line"
+	   "p" : "paste"
+	tip: we can multiply any command:
+		 for example: 4yw would copy 4 words instead of one
+		":" : "command mode"
+	After entering command mode:
+		":1" : "go to line 1"
+		":w" : "write the file, save"
+		":q" : "quit"
+		":q!" : "quit without saving"
+		":wq" : "write an quit"
+		
+#nmap - PORT    STATE   SERVICE
+		21/tcp  open  	ftp
+		
+		"If no options then scans the 1000 most common ports"
+		"By default it performs a TCP scan where it does a TCP handshake"
+		
+		"filtered STATE means the port has a firewall"
+		"SERVICE tells the name of the service typically mapped to that port"
+		"The default scand doesn't tell the process listening on that port
+		 by default. We need to instruct it"
+		
+		PARAMETERS:
+			"-sC" : "use scripts to obtain more detailed information"
+			"-sV" : "service scan to display the detailed info about the service
+					 running on that port"
+			"-p-" : "scan all ports"
+		"nmap -sV --script=banner <target>" : Banner Grabbing
+
+#smbclient - "allows communication and enumeration with SMB shares"
+			 "smbclient -N -L \\\\10.129.42.253":
+				"-L" : "retrieve a list of available shares on the remote host"
+				"-N" : "supress the password prompt"
+
+##WEB ENUMERATION
+
+#gobuster - "Used for directory/file enumeration"
+			"Example" : "gobuster dir -u http://10.10.10.121/ -w /usr/share/seclists/Discovery/Web-Content/common.txt"
+			
+			"Responses" :
+				200 - successful
+				403 - forbidden
+				301 - redirection
+			
+			"gobuster can be used for DNS subdomain enumeration"
+			"For this you'll have to:
+				Clone and install -seclists- that contains many useful
+				lists for fuzzing and exploitation.
+				
+				Have a DNS server like 1.1.1.1 in /etc/resolv.conf
+				
+				use the "dns" option in gobuster
+				
+				"Example" : "gobuster dns -d inlanefreight.com -w /usr/share/SecLists/Discovery/DNS/namelist.txt"
+				
+				This will show ass all the subdomains found using that wordlist
+
+#curl - "Used for retrieving web pages"
+		"Can be used for banner grabbing"
+		
+		"Example" : "curl -IL https://www.inlanefreight.com"
+		"This will show us what's hosted on the web server"
+		
+#whatweb - "Similar to curl but with more functionalities for web enumeration"
+
+"Certificates" - Certificates like SSL/TLS are a valuable source of information if the server uses HTTPS
+The info gained can be used for phishing attacks
+
+"robots.txt" - A common thing is for websites to contain a robots.txt file that is used to instruct
+web crawlers about the resources that can and cannot be accessed for indexing
+
+"Source code" - it's worth checking the source code that can reveal forgotten comments used 
+				during testing and vulnerable scripts and addresses left on the front-end side
+				
+
+##Public Exploits
+
+#searchsploit - "used for finding public exploits of an application"
+				"sudo apt install exploitdb -y"
+				
+				"Example" : "searchsploit openssh 7.2"
+				
+#msfconsole - "Metasploit has many built-in exploits for an easy way to exploit vulnerable targets"
+			to search for an exploit use "search exploit"
+			then "use <name>"
+			> Also you might have to configure options using "show options" and
+			changing the Required set to YES fields to the corresponding values using "set <var> <value>"
+			> Then use "check" and then "run" or "exploit" to run the exploit 
+			
+
+##Connections
+
+#Netcat - "Use it for Opening ports or Connecting to ports and talking"
+		  "Can and is used to establish a REVERSE/BIND SHELL connections"
+		  
+		  "Example" : "nc -lvnp 1234"
+					"PARAMETERS" :
+						-l : Listen Mode
+						-v : Verbose Mode
+						-n : Disable DNS resolution to speed up connection
+						-p 1234 : port number to listen on
+
+##Transferring Files
+

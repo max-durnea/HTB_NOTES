@@ -1,0 +1,9 @@
+1. Gain knowledge about the target using internet tools and other things
+
+2. Scan the target for vulnerabilities using tools like nmap to analyze
+   the target ports and metasploit to exploit the vulnerabilities found
+   
+3. After getting access to the target you have maintain the connection to the target
+   using a shell
+   
+5. Next step is Privilege Escalation
