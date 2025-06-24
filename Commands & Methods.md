@@ -62,7 +62,7 @@ PORT    STATE    SERVICE
 -sC     → default scripts for detailed info  
 -sV     → service/version detection  
 -p-     → scan all ports
-
+--script -> use a specific script
 # Banner Grabbing:
 nmap -sV --script=banner <target>
 ```
@@ -107,6 +107,13 @@ gobuster dns -d inlanefreight.com -w /usr/share/SecLists/Discovery/DNS/namelist.
 # Banner grabbing:
 curl -IL https://www.inlanefreight.com
 ```
+## xmllint
+
+Make XML files more pretty and easy to read!
+
+## CeWL
+
+Tool to generate custom wordlist from website words
 
 ## whatweb
 
@@ -230,3 +237,4 @@ Yagan@htb[/htb]$ md5sum shell
 ```
 
 ### THIS MARKS THE END OF THE INTRODUCTION
+
