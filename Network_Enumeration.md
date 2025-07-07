@@ -1,6 +1,7 @@
 ## NMAP
 "TCP connect Scan is considered the most accurate scan, but not the stealthiest"
 "UDP scans are slower as udp is a stateless protocol"
+"xsltproc command is used to transform XML files into HTML files"
 ### Syntax:
 ```nmap <scan types> <options> <target>```
 
