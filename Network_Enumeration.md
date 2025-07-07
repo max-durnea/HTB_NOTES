@@ -1,5 +1,6 @@
 ## NMAP
-
+"TCP connect Scan is considered the most accurate scan, but not the stealthiest"
+"UDP scans are slower as udp is a stateless protocol"
 ### Syntax:
 ```nmap <scan types> <options> <target>```
 
@@ -12,15 +13,17 @@ SCAN TECHNIQUES:
   -sY/sZ: SCTP INIT/COOKIE-ECHO scans
   -sO: IP protocol scan
   -b <FTP relay host>: FTP bounce scan
+  -sV: Service scan
   ### Other options
 - -PE	Performs the ping scan by using 'ICMP Echo requests' against the target.
 - --packet-trace	Shows all packets sent and received
 - --reason	Displays the reason for specific result.
 - --disable-arp-ping Disable ar ping
 - -n	Disables DNS resolution.
+- --max-retries How many times should it resend a packet
 ### Host Discovery
 ```sudo nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5```
-- 10.129.2.024: Network Range
+- 10.129.2.0/24: Network Range
 - -sn: Disables port scanning
 - -oA tnet: stores the results in all formats with the name tnet
 
