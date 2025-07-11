@@ -7,3 +7,5 @@
    using a shell
    
 5. Next step is Privilege Escalation
+
+6. https://github.com/xiv3r/Burpsuite-Professional/blob/main/README.md

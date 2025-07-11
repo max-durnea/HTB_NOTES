@@ -75,3 +75,10 @@ to log in as that administrator on multiple hosts and servers
 We use the proof of concept to prove that a vulnerability exists in a way that the developers or administrators can replicate it
 and test their remediation efforts. One of the most common examples used to prove software vulnerabilities is to execute 
 <calc.exe> on Windows.
+
+# Open Source Intelligence (OSINT) is the practice of gathering and analyzing publicly available information to produce actionable intelligence.
+
+# Principles
+1.	There is more than meets the eye. Consider all points of view.
+2.	Distinguish between what we see and what we do not see.
+3.	There are always ways to gain more information. Understand the target.
