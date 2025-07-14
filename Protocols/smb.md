@@ -3,7 +3,8 @@
 - **Connection** - ```smbclient -N -L //10.129.14.128```
 - **Inspect Share** - ```smbclient //10.129.14.128/notes```
 - **Commands** - ```help```
-
+## PORTS
+445, 139,137,138
 ## Tools
 
 You can use **NMAP** but it won't tell you everything about the server so a good idea is to use different tools and your own research
