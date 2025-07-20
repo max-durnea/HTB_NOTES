@@ -5,7 +5,8 @@
 - Most common authentication is via UNIX **UID/GID** and **group memberships**. Problem is that client and server don't necessarily have to have the same UID/GID to users and groups.
 
 - config is stored in **/etc/exports**
-
+## Port
+**2049**
 ## Options
 - rw	Read and write permissions.
 - ro	Read only permissions.
@@ -26,7 +27,7 @@
 
 - ```showmount -e 10.129.14.128``` - Show avaliable NFS shares
 - mkdir target-NFS
-sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
+```sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock```
 cd target-NFS
 tree . - **mounting**
 - There we will have the opportunity to access the rights and the usernames and groups to whom the shown and viewable files belong. Because once we have the usernames, group names, UIDs, and GUIDs, we can create them on our system and adapt them to the NFS share to view and modify the files.
